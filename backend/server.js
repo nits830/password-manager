@@ -53,7 +53,7 @@ app.post("/key-value", async (req, res) => {
     try {
       const pair = await KeyValue.findOne({ key });
       if (!pair) return res.status(404).send({ message: "Key not found" });
-      res.status(200).send(pair);
+      res.status(200).send(pair.value);
     } catch (error) {
       res.status(500).send({ message: error.message });
     }
@@ -71,6 +71,22 @@ app.post("/key-value", async (req, res) => {
       res.status(500).send({ message: error.message });
     }
   });
+
+  // Retrieve all the keys
+
+  app.get("/key-value", async (req, res)=> {
+
+    try{
+      const pairs = await KeyValue.find({}, {key:1, _id: 0});
+      if(!pairs.length) return res.status(404).send({"message": "No Accounts Found"})
+      
+      const keys = pairs.map((pair) => pair.key);
+      res.status(200).send(keys)
+
+    } catch(error){
+        res.status(500).send({"message":error.message})
+    }
+  })
 
 
 const PORT = 3000;
