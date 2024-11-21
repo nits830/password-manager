@@ -12,13 +12,10 @@
 
     <!-- Add CSS directly in the head section -->
     <style>
-      body {
-        background-color: black;
-        color: green;
-        font-family: Arial, sans-serif; /* Optional: Sets default font */
-      }
+     
 
-      h1, p {
+      h1,
+      p {
         text-align: center;
         margin-top: 50px;
       }
@@ -26,9 +23,13 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <h1>Welcome to the Password Manager</h1>
-      <p>Manage your passwords securely!</p>
+    <div
+      id="root"
+      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+    >
+      <div
+        class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"
+      ></div>
     </div>
   </body>
 </html>
