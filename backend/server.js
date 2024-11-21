@@ -2,9 +2,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 
 // Middleware to parse JSON requests
 app.use(express.json());
+app.use(cors());
+
 
 // Connect to MongoDB
 mongoose.connect("mongodb+srv://nits911:mongodb830@cluster0.hbcdxjb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -89,5 +92,5 @@ app.post("/key-value", async (req, res) => {
   })
 
 
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
