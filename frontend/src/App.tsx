@@ -19,6 +19,7 @@ function App() {
         <Route path="/retrieve" element={<RetrievePage />} />
         <Route path="/signup" element= {<Signup/>}/>
         <Route path="/signin" element= {<Signin/>}/>
+        
       </Routes>
       <Hero/>
     </BrowserRouter>

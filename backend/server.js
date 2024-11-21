@@ -56,7 +56,7 @@ app.post("/key-value", async (req, res) => {
     try {
       const pair = await KeyValue.findOne({ key });
       if (!pair) return res.status(404).send({ message: "Key not found" });
-      res.status(200).send(pair.value);
+      res.status(200).json({ value: pair.value });
     } catch (error) {
       res.status(500).send({ message: error.message });
     }
